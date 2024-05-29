@@ -1,2 +1,4 @@
 .terraform
 .terraform/*
+states/.terraform
+states/.terraform/*
