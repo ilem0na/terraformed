@@ -1,29 +1,21 @@
 provider "aws" {
   region = "us-east-2"
-  
 }
 
+module "sql_relational_database" {
+  source = "../../../modules/data-stores/my-sql"
+  db_env = "prod"
+  db_username = var.db_username
+  db_password = var.db_password
 
-resource "aws_db_instance" "example" {
-  identifier_prefix = "terraform-ilemona"
-  instance_class = "db.t3.micro"
-  engine_version = "8.0"
-  allocated_storage = 10
-  engine = "mysql"
-  skip_final_snapshot = true
-  db_name = "ile_database"
-
-  username = var.db_username
-  password = var.db_password
 }
-
 
 terraform {
-    backend "s3" {
-        bucket = "terraform-ilemona"
-        key = "prod/data-stores/mysql/terraform.tfstate-il"
-        region = "us-east-2"
-        dynamodb_table = "terraform-locks-il"
-        encrypt = true
-    }
+  backend "s3" {
+    bucket = "terraform-ilemona"
+    region = "us-east-2"
+    key = "prod/datastore/sql_relational_database/terraform.tfstate"
+    dynamodb_table = "terraform-locks-il"
+    encrypt = true
+  }
 }

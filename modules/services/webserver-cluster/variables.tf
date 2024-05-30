@@ -21,3 +21,21 @@ variable "region" {
   description = "region for resource "
   type = string
 }
+
+variable "instance_type" {
+  description = "Type of VM to run e.g (t2.micro)"
+  default = "t2.micro"
+  type = string
+}
+
+variable "min_size" {
+    description = "value of the minimum size for server"
+    default = 2
+    type = number
+}
+
+variable "max_size" {
+    description = "value of the max size for server"
+    default = 3
+    type = number
+}
