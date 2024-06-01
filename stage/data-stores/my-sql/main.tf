@@ -4,7 +4,7 @@ provider "aws" {
 
 module "sql_relational_database" {
   source = "../../../modules/data-stores/my-sql"
-  db_env = "stage"
+  db_env = stage
   db_username = var.db_username
   db_password = var.db_password
 

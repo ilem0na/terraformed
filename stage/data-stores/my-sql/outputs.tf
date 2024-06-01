@@ -1,10 +1,10 @@
 output address {
-  value = aws_db_instance.example.address
+  value = module.sql_relational_database.address
   description = "The address of the database for connection"
 }
 
 output "port" {
-  value = aws_db_instance.example.port
+  value = module.sql_relational_database.port 
   description = "The port of the database for connection"
   
 }
