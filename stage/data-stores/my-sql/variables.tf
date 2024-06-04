@@ -9,3 +9,10 @@ variable "db_password" {
   type = string
   sensitive = true
 }
+
+variable "stage" {
+  description = "The enviroment used in resurce creation"
+  default = "staging-env"
+  type = string
+  
+}

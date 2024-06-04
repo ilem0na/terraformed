@@ -10,8 +10,8 @@ variable "db_password" {
   sensitive = true
 }
 
-variable "db_env" {
-  description = "name of the db instance"
-  type = string
-  
+
+variable "stage" {
+  description = "enviroment for prod"
+  default = "prod"
 }
