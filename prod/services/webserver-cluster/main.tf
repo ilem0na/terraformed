@@ -11,6 +11,11 @@ module "webserver_cluster" {
   instance_type = "t2.micro"
   min_size = 2
   max_size = 3
+
+  custom_tags = {
+    Owner = "team-foo"
+    Managed_by = "terraform"
+  }
 }
 
 
